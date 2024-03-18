@@ -8,12 +8,13 @@ from nltk.stem import WordNetLemmatizer
 import numpy as np
 from keras.models import load_model
 
-lemmatizer=WordNetLemmatizer(0)
-intents=json.loads(open('intents.json').read())
+lemmatizer=WordNetLemmatizer()
+with open(r'C:/Users/HP/OneDrive/Desktop/prayatna/Prayatna-Legal-Warriors/legal/intents.json', 'r') as file:
+    intents = json.load(file)
 words=pickle.load(open('words.pkl','rb'))
 classes=pickle.load(open('classes.pkl','rb'))
 
-model=load_model("chatbot_legalwarriors.h5")
+model=load_model("chatbot_legalwarriors.keras")
 
 def clean_up_sentence(sentence):
     sentence_words=nltk.word_tokenize(sentence)
@@ -37,20 +38,32 @@ def predict_class(sentence):
     results.sort(key=lambda x:x[1], reverse=True)
     return_list=[]
     for r in results:
-        result_list.append(('intent',classes(r[0]),'probability',str(r[1])))
+        return_list.append({'intent':classes(r[0]),'probability':str(r[1])})
     return return_list 
 
-def get_response(intents_list,intents_json):
+def get_response(intents_list, intents_json):
     list_of_intents=intents_json['intents']
-    tag=intents_list[0]['intents']
+    tag=intents_list[0]['intent']
     for i in list_of_intents:
         if i['tag']==tag:
-            result=random.choice(i['responses'])     
+            result= random.choice(i['responses'])     
             break     
     return result
+
+'''def get_response(intents_list, intents_json):
+    if intents_list:  # Check if the list is not empty
+        tag = intents_list[0]['intent']  # Access the first element's 'intent' key
+        # Further processing based on the 'tag' value
+        return response  # Return the generated response
+    else:
+        return "No intents found"'''
+
+
 print('Great: Bot is running!')
 
 while True:
     message=input("")
     ints=predict_class(message)
-    res=get_response(ints,intents)
+    #res=get_response(ints,intents)
+    res = get_response(ints, intents)
+    print(res)

@@ -1,0 +1,147 @@
+body{
+    margin: 0px;
+    padding:0px;
+}
+.logo {
+    text-align: left;
+}
+
+.img_logo img {
+    height: 80px;
+}
+
+.menubar ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+li {list-style: none;letter-spacing: 1px;}
+
+a {
+    text-decoration: none;
+}
+
+.menubar a {
+    color: black;
+}
+
+.menubar {
+    padding-top: 28px;
+}
+
+.log img {
+    height: 60px;
+    padding-top: 13px;
+}
+
+.log {
+    text-align: center;
+}
+.sourse {
+    background: black;
+    margin-left: 30px;
+    margin-right: 30px;
+    height: 600px;
+    border-radius: 25px;
+    
+}
+
+
+.container {
+    height: 100%;
+}
+
+.box1 {
+    border: 3px white solid;
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 150px;
+    padding: 42px;
+    border-radius: 25px;
+    color: white;}
+
+
+
+.box2 {
+    border: 3px white solid;
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 150px;
+    padding: 42px;
+    border-radius: 25px;
+    color: white;
+}
+
+.box3 {
+    border: 3px white solid;
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 150px;
+    padding: 42px;
+    border-radius: 25px;
+    color: white;
+}
+
+.box4 {
+    border: 3px white solid;
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 150px;
+    padding: 42px;
+    border-radius: 25px;
+    color: white;
+}
+h1 {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 62px;
+    font-family: fangsong;
+    color: white;
+}
+
+
+
+.right_screen {
+    height: 743px;
+    background-color: black;
+    text-align: center;
+}
+
+.main_screen {
+    display: flex;
+}
+
+.right_screen h2 {
+    color: white;
+}
+
+
+.r_screen_img img {
+    border: 2px white solid;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.search_bar {padding-top: 229px;}
+
+input[type="search"] {
+    width: 700px;
+    height: 50px;
+    border: 2px darkgray solid;
+    border-radius: 25px;
+    background-color: gainsboro;
+}
+
+
+.option_bar ul li a {
+    color: black;
+    font-size: 20px;
+}
+
+.option_bar ul li {padding-top: 15px;}
+
+.heading h1 {font-family: cursive;}
+
+.heading {
+    padding-top: 10px;
+}

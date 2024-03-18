@@ -68,5 +68,13 @@ sgd = tf.keras.optimizers.SGD(learning_rate=0.01, momentum=0.9, nesterov=True)
 
 model.compile(loss='categorical_crossentropy',optimizer=sgd,metrics=['accuracy'])
 hist=model.fit(np.array(trainX),np.array(trainY),epochs=100,batch_size=5,verbose=1)
-model.save('chatbot_legalwarriors.h5',hist)
+model.save('chatbot_legalwarriors.keras',hist)
+# Load your pre-trained model
+model = tf.keras.models.load_model('chatbot_legalwarriors.keras')
+
+# Compile the model with metrics
+model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+
+# Now you can use the model with compiled metrics
+
 print("executed")
