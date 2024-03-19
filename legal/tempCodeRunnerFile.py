@@ -1,0 +1,1 @@
+return_list = [{'intent': classes[r[0]], 'probability': str(r[1])} for r in results]
