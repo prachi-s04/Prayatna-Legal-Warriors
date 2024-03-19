@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Summarization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            background-image: url("bg.jpg");
+            background-size: cover;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            margin-top: 250 px;
+            padding: 20px;
+            background-color: #ffffff83;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);        
+
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .upload-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #fileInput {
+            display: none;
+        }
+        .upload-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .upload-btn:hover {
+            background-color: #0056b3;
+        }
+        #summary {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+        @media screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Document Summarization</h1>
+        <div class="upload-container">
+            <input type="file" id="fileInput" accept=".txt, .pdf">
+            <label for="fileInput" class="upload-btn">Upload Document</label>
+        </div>
+        <div id="summary"></div>
+    </div>
+
+    <script>
+        document.getElementById('fileInput').addEventListener('change', function() {
+            var file = this.files[0];
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                var text = e.target.result;
+                summarizeDocument(text);
+            };
+            reader.readAsText(file);
+        });
+
+        function summarizeDocument(text) {
+            // You need to implement the summarization logic here
+            // For simplicity, let's just display the first 100 characters as the summary
+            var summary = text.substring(0, 100);
+            document.getElementById('summary').innerHTML = "<h2>Summary</h2><p>" + summary + "</p>";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("bg.jpg");
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;  
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex; 
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+
+            
+        }
+
+        .panel {    
+            width: 40%;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgb(231, 225, 225);
+            background-color: rgba(255, 255, 255, 0.8); /* Adjust the last value for transparency */
+            width: 50vh;
+        }
+
+        h2 {
+            text-align: center;
+            color: #ffffff;
+            font-size: 40px; 
+            font-family:Arial, Helvetica, sans-serif;}
+
+        p {
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .client-panel {
+            background-color: #ffae00ad; /* Yellow */
+        }
+
+        .client-panel:hover {
+            background-color: #ffae00; /* Yellow */
+        }
+
+        .lawyer-panel {
+            background-color: #ffae00b4; /* Blue */
+            margin-left: 50px;
+        }
+
+        .lawyer-panel:hover {
+            background-color: #ffae00; /* Blue */
+        }
+
+        /* Remove default underline from links */
+        a {
+            text-decoration: none;
+            color: inherit; /* Use the same color as surrounding text */
+        }
+
+        /* Optional: Style links on hover */
+        a:hover {
+            text-decoration: none; /* Add underline on hover */
+        }
+
+        .image-container img {
+            max-width: 40%; /* Adjust as needed */
+            max-height: 40%; /* Adjust as needed */
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center; /* Align horizontally */
+            align-items: center; /* Align vertically */
+            height: 300px; /* Set a height for the container */
+        }
+
+
+    </style>    
+</head>
+<body>
+    <div class="container">
+        <a href="client.html">
+        <div class="panel client-panel">
+            <h2>CLIENT</h2>
+            <div class="image-container">
+            <img src="cust.png" alt="Description of the image">
+            </div>
+            <p>Welcome to our website!<br> If you're seeking legal assistance, we're here to help.</p>
+            <p>Feel free to explore our services and get in touch with us.</p>
+        </div>
+    </a>
+    <a href="lawyer.html">
+        <div class="panel lawyer-panel">
+            <h2>LAWYER</h2>
+            <div class="image-container">
+            <img src="law.png" alt="Description of the image">
+            </div>
+            <p>Welcome to our website!<br> As a legal professional, you play a crucial role in ensuring justice.</p>
+            <p>Explore opportunities to connect with clients and expand your practice.</p>
+        </div>
+    </a>
+    </div>
+
+    
+</body>
+</html>

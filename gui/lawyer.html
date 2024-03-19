@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Input Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("bg.jpg");
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .container {
+            background-color: #ffffff8f;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffbf00;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        
+        select {
+            background-color: #ffffff;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        
+        input[type="submit"] {
+            background-color: #ffbb00;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #605412;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Your Details</h2>
+        <form action="#" method="post" name="google-sheet">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="tel" name="phone" placeholder="Your Mobile Number" pattern="[0-9]{10}" required>
+            <select name="specialization" required>
+                <option value="" disabled selected>Select Your Specialization</option>
+                <option value="criminal law">Criminal Law</option>
+                <option value="constitutional law">Constitutional Law</option>
+                <option value="commercial law">Commercial Law</option>
+                <option value="intellectual property law">Intellectual Property Law</option>
+            </select>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        const scriptURL= "https://script.google.com/macros/s/AKfycby5Es0FsQgATCzEjRbUDVrlHXkyucRwfn5Gs3SiRTBqCN_1xz0ZRfnlFBJP9fKml6MB2Q/exec"
+        const form = document.forms['google-sheet']
+
+        form.addEventListener('submit',e=>{
+            e.preventDefault()
+            fetch(scriptURL,{ method:'POST', body: new FormData(form)})
+            .then(response => alert("thanks for contacting us..!"))
+            .catch(error => console.error('Error!,error.message'))
+        })
+     </script>
+</body>
+</html>
